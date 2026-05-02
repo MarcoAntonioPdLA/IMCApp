@@ -38,9 +38,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.imcapp.ui.theme.Typography
 
-val VeryLightGray = Color(0xFFF0EEF6)
-val Purple = Color(0xFF2802A1)
-val LightPurple = Color(0xFFD3CCFA)
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -179,11 +177,10 @@ fun FormScreen(navController: NavController) {
             )
         }
 
-        //Botón para calcular
         Button(
             modifier = Modifier.fillMaxWidth(),
             onClick = {
-                navController.navigate(Routes.resultScreen + "/Resultado")
+                navController.navigate(Routes.resultScreen + "/$genderSelectedIndex/$height/$weight/$age")
             },
             colors = ButtonDefaults.buttonColors(containerColor = Purple)
         ) {

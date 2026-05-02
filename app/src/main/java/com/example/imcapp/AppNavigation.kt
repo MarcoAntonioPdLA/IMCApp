@@ -12,9 +12,12 @@ fun AppNavigation() {
         composable(Routes.formScreen) {
             FormScreen(navController)
         }
-        composable(Routes.resultScreen + "/{nombre}") {
-            val nombre: String? = it.arguments?.getString("nombre")
-            ResultScreen(nombre ?: "Sin nombre")
+        composable(Routes.resultScreen + "/{genderIndex}/{height}/{weight}/{age}") { backStackEntry ->
+            val genderIndex = backStackEntry.arguments?.getString("genderIndex")?.toIntOrNull() ?: 0
+            val height = backStackEntry.arguments?.getString("height")?.toIntOrNull() ?: 0
+            val weight = backStackEntry.arguments?.getString("weight")?.toIntOrNull() ?: 0
+            val age = backStackEntry.arguments?.getString("age")?.toIntOrNull() ?: 0
+            ResultScreen(navController, genderIndex, height, weight, age)
         }
     })
 }
