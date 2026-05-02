@@ -1,12 +1,9 @@
-package com.example.imcapp.ui.theme
+package com.example.imcapp
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.imcapp.FormScreen
-import com.example.imcapp.ResultScreen
-import com.example.imcapp.Routes
 
 @Composable
 fun AppNavigation() {
